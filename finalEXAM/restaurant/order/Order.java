@@ -35,9 +35,8 @@ public class Order
             return isDone;
         }
     }
-
+    
     // GETTERS AND SETTER
-
     public int getPrice()
     {
         int finalPrice = this.price;
@@ -51,5 +50,4 @@ public class Order
         }
         return finalPrice;
     }
-    
 }
