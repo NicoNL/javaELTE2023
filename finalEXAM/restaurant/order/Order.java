@@ -2,6 +2,7 @@ package restaurant.order;
 
 public class Order 
 {
+    //first part
     public OrderType type;
     public String item;
     public final boolean isInMenu;
