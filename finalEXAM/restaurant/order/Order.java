@@ -23,19 +23,19 @@ public class Order
 
     public void make()
     {
-        isDone = true;
+        if(this.isDone == false)
+        {
+            this.isDone = true;
+        }
+        else
+        {
+            throw new IllegalStateException();
+        }
     }
 
     public boolean isDone()
     {
-        if(isDone == true)
-        {
-            throw new IllegalStateException("Hamburger is Done");
-        }
-        else
-        {
-            return isDone;
-        }
+        return isDone;
     }
     
     // GETTERS AND SETTER

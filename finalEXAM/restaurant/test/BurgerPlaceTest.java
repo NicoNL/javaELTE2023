@@ -25,17 +25,32 @@ public class BurgerPlaceTest
 
         assertEquals(0,bp.getProfit());
         
-        int o1 = bp.order(OrderType.TAKEAWAY, "Bacon Burger", false);
-        assertEquals(false,bp.isDone(o1));
+        int o1Num = bp.order(OrderType.TAKEAWAY, "Bacon Burger", false);
+        assertEquals(false,bp.isDone(o1Num));
 
-        int o2 = bp.order(OrderType.DINE_IN, "Double Cheeseburger", true);
-        assertEquals(o2,o1+1);
-        assertEquals(false,bp.isDone(o2));
+        int o2Num = bp.order(OrderType.DINE_IN, "Double Cheeseburger", true);
+        assertEquals(o2Num,o1Num+1);
+        assertEquals(false,bp.isDone(o2Num));
 
-
-        assertEquals(true,bp.makeNextOrder());
-        assertEquals(false,bp.isDone(o2));
+        boolean b1 = bp.makeNextOrder();
+        assertEquals(true,bp.isDone(o1Num));
+        assertEquals(false,bp.isDone(o2Num));
         assertEquals(0,bp.getProfit());
+
+        Order o1 = bp.takeOrder(o1Num);
+        assertEquals(2490, bp.getProfit());
+
+        boolean b2 = bp.makeNextOrder();
+        assertEquals(true,bp.isDone(o2Num));
+
+        Order o2 = bp.takeOrder(o2Num);
+        assertEquals(5570, bp.getProfit());
+
+        assertEquals(false,bp.makeNextOrder());
+
+
+
+
   
 
 

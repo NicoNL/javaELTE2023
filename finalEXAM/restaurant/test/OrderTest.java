@@ -34,8 +34,10 @@ public class OrderTest
         Order order1 = new Order(OrderType.DINE_IN, "Hamburguer", false);
         assertEquals(false,order1.isDone());
         order1.make();
+        assertEquals(true,order1.isDone());
         try
         {
+            order1.make();
             assertEquals(true,order1.isDone());
         }
         catch(IllegalStateException e)

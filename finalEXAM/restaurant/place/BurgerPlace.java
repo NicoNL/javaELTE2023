@@ -54,7 +54,7 @@ public class BurgerPlace implements Restaurant
         {
             throw new IllegalArgumentException();
         }
-        else if(!orders.get(order).isDone())
+        else if(orders.get(order).isDone() == false)
         {
             throw new IllegalStateException();
         }
