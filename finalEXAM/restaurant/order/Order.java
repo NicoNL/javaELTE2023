@@ -7,7 +7,7 @@ public class Order
     public String item;
     public final boolean isInMenu;
     private final int price = 2490;
-    private final int orderNumber = 1;
+    public final int orderNumber;
     static private int nextOrderNumber = 1;
     private boolean isDone = false;
 
@@ -16,6 +16,7 @@ public class Order
         this.type = type;
         this.item = item;
         this.isInMenu = isInMenu;
+        this.orderNumber = nextOrderNumber;
         nextOrderNumber++;
         int finalPrice = getPrice();
     }

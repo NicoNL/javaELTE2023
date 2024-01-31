@@ -26,17 +26,21 @@ public class BurgerPlace implements Restaurant
     public boolean makeNextOrder()
     {
         for (Map.Entry<Integer, Order> entry : orders.entrySet()) {
-            if (!entry.getValue().isDone()) {
-                entry.getValue().isDone();
+            if (entry.getValue().isDone() == false) 
+            {
+                entry.getValue().make();
                 return true;
             }
+            System.out.println("hola");
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue().item);
         }
         return false;
     }
 
     public int order(OrderType type, String item, boolean isInMenu)
     {
-        return 0;
+        Order o1 = new Order(type, item, isInMenu);
+        return o1.orderNumber;
     }
 
     public Order takeOrder(int order)
