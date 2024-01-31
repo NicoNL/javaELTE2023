@@ -25,7 +25,7 @@ public class BurgerPlace implements Restaurant
     
     public boolean makeNextOrder()
     {
-        for (Map.Entry<Integer, Order> entry : orders.entrySet()) {
+        for (Map.Entry<Integer, Order> entry : this.orders.entrySet()) {
             if (entry.getValue().isDone() == false) 
             {
                 entry.getValue().make();
@@ -40,6 +40,7 @@ public class BurgerPlace implements Restaurant
     public int order(OrderType type, String item, boolean isInMenu)
     {
         Order o1 = new Order(type, item, isInMenu);
+        orders.put(o1.orderNumber, o1);
         return o1.orderNumber;
     }
 
