@@ -31,8 +31,6 @@ public class BurgerPlace implements Restaurant
                 entry.getValue().make();
                 return true;
             }
-            System.out.println("hola");
-            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue().item);
         }
         return false;
     }

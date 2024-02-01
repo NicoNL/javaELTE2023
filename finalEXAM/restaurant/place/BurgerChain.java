@@ -23,7 +23,9 @@ public class BurgerChain extends BurgerPlace
             return false;
         }
         BurgerChain bc = (BurgerChain) obj;
-        return name.equals(bc.name) && pastOrders.equals(bc.pastOrders);
+        Integer size = pastOrders.size();
+        Integer size2 = pastOrders.size();
+        return name.equals(bc.name) && size.equals(size2);
     }
     public BurgerChain(String name)
     {
@@ -45,13 +47,13 @@ public class BurgerChain extends BurgerPlace
                 String type = pastOrders.get(i).type.name();
                 if(pastOrders.get(i).isInMenu)
                 {
-                    menu = "without a menu";
+                    menu = "in a menu";
                 }
                 else
                 {
-                    menu = "in a menu";
+                    menu = "without a menu";
                 }
-                writer.write("#" + i+1 + ". " + item + " - " + menu + " (" + type + ")\n"); 
+                writer.write("#" + (i+1) + ". " + item + " - " + menu + " (" + type + ")\n");
             }
         }
         catch(IOException e)
