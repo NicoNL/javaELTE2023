@@ -6,8 +6,8 @@
 @ECHO OFF
 set PROPS=%~1
 set OPTS=%~2
-set TARGET1="time\TimeTestSuite.java"
-set TARGET2="time.TimeTestSuite"
+set TARGET1="restaurant/structure/RestaurantTestSuite.java"
+set TARGET2="restaurant.structure.RestaurantTestSuite"
 if not "%~3"=="" (
     set TARGET1="%~3"
     set TARGET2="%~4"

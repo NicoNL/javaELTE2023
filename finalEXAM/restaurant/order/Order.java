@@ -3,8 +3,8 @@ package restaurant.order;
 public class Order 
 {
     //first part
-    public OrderType type;
-    public String item;
+    public final OrderType type;
+    public final String item;
     public final boolean isInMenu;
     private final int price = 2490;
     public final int orderNumber;

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 import java.util.List;
+import java.util.Objects;
+
 import restaurant.order.Order;
 
 public class BurgerChain extends BurgerPlace
@@ -27,6 +29,11 @@ public class BurgerChain extends BurgerPlace
         Integer size2 = pastOrders.size();
         return name.equals(bc.name) && size.equals(size2);
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
     public BurgerChain(String name)
     {
         super();
