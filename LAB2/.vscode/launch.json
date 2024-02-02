@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "CircleMain",
+            "request": "launch",
+            "mainClass": "CircleMain",
+            "projectName": "LAB2_ab16d23"
+        },
+        {
+            "type": "java",
+            "name": "ComplexMain",
+            "request": "launch",
+            "mainClass": "ComplexMain",
+            "projectName": "LAB2_ab16d23"
+        },
+        {
+            "type": "java",
+            "name": "DistanceMain",
+            "request": "launch",
+            "mainClass": "DistanceMain",
+            "projectName": "LAB2_ab16d23"
+        },
+        {
+            "type": "java",
+            "name": "PointMain",
+            "request": "launch",
+            "mainClass": "PointMain",
+            "projectName": "LAB2_ab16d23"
+        }
+    ]
+}
