@@ -1,0 +1,45 @@
+
+Download:
+    https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.9.2/junit-platform-console-standalone-1.9.2.jar
+
+(Rename: junit-platform-console-standalone-1.9.2.jar --> junit5all.jar)
+
+Compile & run single test:
+    javac -cp ".:junit5all.jar:checkthat.jar" time\TimeTest.java
+    java -jar junit5all.jar --disable-banner --disable-ansi-colors -cp . -cp checkthat.jar -c time.TimeTest
+
+Compile & run structural test:
+    javac time\Time.java
+    javac -cp .;junit5all.jar;checkthat.jar time\TimeStructureTest.java
+    java -jar junit5all.jar --disable-banner --disable-ansi-colors -cp . -cp checkthat.jar -c time.TimeStructureTest
+
+Compile & run test suite:
+    javac -cp .;junit5all.jar;checkthat.jar time\TimeTestSuite.java
+    java -jar junit5all.jar --disable-banner --disable-ansi-colors -cp . -cp checkthat.jar -c time.TimeTestSuite
+
+
+Expected output:
+
+.
++-- JUnit Jupiter [OK]
++-- JUnit Vintage [OK]
+'-- JUnit Platform Suite [OK]
+  '-- TimeTestSuite [OK]
+    '-- JUnit Jupiter [OK]
+      +-- TimeStructureTest [OK]
+      | +-- constructor() [OK]
+      | +-- fieldMin() [OK]
+      | +-- fieldHour() [OK]
+      | '-- methodGetEarlier() [OK]
+      '-- TimeTest [OK]
+        +-- testGetHour() [OK]
+        +-- testGetMin() [OK]
+        +-- testSetHour() [OK]
+        +-- testSetMin() [OK]
+        '-- testEarlier(int, int, int, int, int, int) [OK]
+          +-- [1] 01, 02, 01, 02, 12, 34 [OK]
+          +-- [2] 01, 59, 01, 59, 12, 34 [OK]
+          '-- [3] 12, 34, 23, 59, 12, 34 [OK]
+
+[        11 tests found           ]
+[        11 tests successful      ]
